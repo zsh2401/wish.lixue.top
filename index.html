@@ -1,9 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<audio autoplay="autoplay" controls="controls"loop="loop" preload="auto"
-            src="bgm.mp3">
+<audio id="bgm" autoplay="autoplay"loop="loop" preload="auto"
+			src="bgm.mp3">
+			
       你的浏览器不支持audio标签
 </audio>
+<script type="text/javascript">
+	bgm = document.getElementById('bgm');
+	bgm.volume = 0.5
+</script>
 <head>
 	<title>Our Love Story</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -16,47 +21,51 @@
 	<link href="css/default.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/garden.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/functions_dev.js"></script>
 </head>
 
 <body>
 	<div id="mainDiv">
 		<div id="content">
 			<div id="code">
-				<span class="comments">这是一份给你的祝福,李学</span><br />
+				<span class="comments">致李学:</span><br />
+				<span class="space"/><span class="comments">这是一份美好的祝福</span><br />
 				<span class="space"/><span class="comments">马上就要高考了</span><br />
 				<span class="space"/><span class="comments">而高考是人生的重要转折点</span><br />
-				<span class="space"/><span class="comments">*/</span><br />
+				<span class="space"/><span class="comments">省略一大堆祝福语</span><br />
+				<span class="space"/><span class="comments">省略一大堆祝福语</span><br />
+				<span class="space"/><span class="comments">省略一大堆祝福语</span><br />
+				<span class="space"/><span class="comments">省略一大堆祝福语</span><br />
+				<span class="space"/><span class="comments">省略一大堆祝福语</span><br />
+				<span class="space"/><span class="comments">省略一大堆祝福语</span><br />
+				<span class="space"/><span class="comments">省略一大堆祝福语</span><br />
 			</div>
 			<div id="loveHeart">
 				<canvas id="garden"></canvas>
 				<div id="words">
 					<div id="messages">
-						Darlasdasds
+						距离高考还有
 						<div id="elapseClock"></div>
 					</div>
 					<div id="loveu">
-						Love u forever and ever.<br/>
-						<div class="signature">- hackerzhou</div>
+						一定要加油啊!<br/>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div id="copyright">
-			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
-			Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011
+			Copyright © 2017 <a href='http://zsh2401.top'>zsh2401.top</a> 2015-2018
 		</div>
 	</div>
 	<script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 55;
-		var together = new Date();
-		together.setFullYear(2010, 10, 2);
-		together.setHours(20);
-		together.setMinutes(0);
-		together.setSeconds(0);
-		together.setMilliseconds(0);
-		
+		var turningpoint = new Date();
+		turningpoint.setFullYear(2018, 6, 8);
+		turningpoint.setHours(0);
+		turningpoint.setMinutes(0);
+		turningpoint.setSeconds(0);
+		turningpoint.setMilliseconds(0);
 		if (!document.createElement('canvas').getContext) {
 			var msg = document.createElement("div");
 			msg.id = "errorMsg";
@@ -71,10 +80,10 @@
 				startHeartAnimation();
 			}, 5000);
 
-			timeElapse(together);
+			timeElapse(turningpoint);
 			setInterval(function () {
-				timeElapse(together);
-			}, 500);
+				timeElapse(turningpoint);
+			}, 1000);
 
 			adjustCodePosition();
 			$("#code").typewriter();
