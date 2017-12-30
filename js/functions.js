@@ -1,1 +1,75 @@
-var $window=$(window),gardenCtx,gardenCanvas,$garden,garden;var clientWidth=$(window).width();var clientHeight=$(window).height();$(function(){$loveHeart=$("#loveHeart");var a=$loveHeart.width()/2;var b=$loveHeart.height()/2-55;$garden=$("#garden");gardenCanvas=$garden[0];gardenCanvas.width=$("#loveHeart").width();gardenCanvas.height=$("#loveHeart").height();gardenCtx=gardenCanvas.getContext("2d");gardenCtx.globalCompositeOperation="lighter";garden=new Garden(gardenCtx,gardenCanvas);$("#content").css("width",$loveHeart.width()+$("#code").width());$("#content").css("height",Math.max($loveHeart.height(),$("#code").height()));$("#content").css("margin-top",Math.max(($window.height()-$("#content").height())/2,10));$("#content").css("margin-left",Math.max(($window.width()-$("#content").width())/2,10));setInterval(function(){garden.render()},Garden.options.growSpeed)});$(window).resize(function(){var b=$(window).width();var a=$(window).height();if(b!=clientWidth&&a!=clientHeight){location.replace(location)}});function getHeartPoint(c){var b=c/Math.PI;var a=19.5*(16*Math.pow(Math.sin(b),3));var d=-20*(13*Math.cos(b)-5*Math.cos(2*b)-2*Math.cos(3*b)-Math.cos(4*b));return new Array(offsetX+a,offsetY+d)}function startHeartAnimation(){var c=50;var d=10;var b=new Array();var a=setInterval(function(){var h=getHeartPoint(d);var e=true;for(var f=0;f<b.length;f++){var g=b[f];var j=Math.sqrt(Math.pow(g[0]-h[0],2)+Math.pow(g[1]-h[1],2));if(j<Garden.options.bloomRadius.max*1.3){e=false;break}}if(e){b.push(h);garden.createRandomBloom(h[0],h[1])}if(d>=30){clearInterval(a);showMessages()}else{d+=0.2}},c)}(function(a){a.fn.typewriter=function(){this.each(function(){var d=a(this),c=d.html(),b=0;d.html("");var e=setInterval(function(){var f=c.substr(b,1);if(f=="<"){b=c.indexOf(">",b)+1}else{b++}d.html(c.substring(0,b)+(b&1?"_":""));if(b>=c.length){clearInterval(e)}},75)});return this}})(jQuery);function timeElapse(c){var e=Date();var f=(Date.parse(e)-Date.parse(c))/1000;var g=Math.floor(f/(3600*24));f=f%(3600*24);var b=Math.floor(f/3600);if(b<10){b="0"+b}f=f%3600;var d=Math.floor(f/60);if(d<10){d="0"+d}f=f%60;if(f<10){f="0"+f}var a='<span class="digit">'+g+'</span> days <span class="digit">'+b+'</span> hours <span class="digit">'+d+'</span> minutes <span class="digit">'+f+"</span> seconds";$("#elapseClock").html(a)}function showMessages(){adjustWordsPosition();$("#messages").fadeIn(5000,function(){showLoveU()})}function adjustWordsPosition(){$("#words").css("position","absolute");$("#words").css("top",$("#garden").position().top+195);$("#words").css("left",$("#garden").position().left+70)}function adjustCodePosition(){$("#code").css("margin-top",($("#garden").height()-$("#code").height())/2)}function showLoveU(){$("#loveu").fadeIn(3000)};
+/*Change the time to change */
+var currentNum = 0;
+var timestampForExam = 1528387200;
+function changeTime(){
+	var current = new Date();
+	var timestampForNow = current.getTime() / 1000;
+	var span = timestampForExam - timestampForNow;
+	span = Math.round(span);
+	var over = span % (3600*24);
+
+	var day = Math.round(span /3600/24);
+	var hrs = Math.round(over / 3600);
+	var mins = Math.round(over % 3600 / 60);
+	var secs = Math.round(over % 60);
+
+	var strLastDay = "<span class=\"digit\">" + day.lenWithZero() + "</span>" + "<span class=\"unit\">天</span>";
+	var strHours = "<span class=\"digit\">" + hrs.lenWithZero() + "</span>"+ "<span class=\"unit\">时</span>";
+	var strMin = "<span class=\"digit\">" + mins.lenWithZero() + "</span>"+ "<span class=\"unit\">分</span>";
+	var strSec = "<span class=\"digit\">" + secs.lenWithZero() + "</span>"+ "<span class=\"unit\">秒</span>";
+
+	$("#lastTimeClock").html(strLastDay + strHours + strMin + strSec);	
+}
+/*Change the time to change */
+
+/*Text Typing effect*/
+Number.prototype.lenWithZero = function() {  
+    var strText = this.toString();  
+    while (strText.length < 2) {  
+        strText = '0' + strText;  
+    }  
+    return strText;  
+};  
+(function($) {
+	$.fn.typewriter = function() {
+		this.each(function() {
+			var $ele = $(this), str = $ele.html(), progress = 0;
+			$ele.html('');
+			var timer = setInterval(function() {
+				var current = str.substr(progress, 1);
+				if (current == '<') {
+					progress = str.indexOf('>', progress) + 1;
+				} else {
+					progress++;
+				}
+				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
+				if (progress >= str.length) {
+					clearInterval(timer);
+				}
+			}, 75);
+		});
+		return this;
+	};
+})(jQuery);
+/*Text Typing effect*/
+
+/* Image functions */
+var images=["a.jpg","b.jpg","c.jpg","d.jpg","e.jpg"];
+var currentIndex=1;
+var maxIndex=images.length; 
+function autoSwitch(){
+    if(currentIndex >= maxIndex){
+        currentIndex = 0;
+    }
+    setImg("mainimg",images[currentIndex]);
+    currentIndex++;
+}
+function setImg(imgid,imgname=null){
+    fileName = "img/" + imgid + ".jpg";
+    if(imgname != null){
+        fileName = "img/" + imgname;
+    }   
+    var bigimg = document.getElementById(imgid);
+    bigimg.src=fileName;
+}
+/* Image functions */
