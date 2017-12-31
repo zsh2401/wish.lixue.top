@@ -1,4 +1,4 @@
-var imgs = ["a.jpg","b.jpg","c.jpg"];
+var imgs = ["a.jpg","b.jpg","c.jpg","d.jpg","e.jpg"];
 var img_path = "img/";
 var img_id = "header_img";
 var currentIndex=1;
@@ -13,6 +13,7 @@ function autoSwitch(){
 function setImg(imgname){
     fileName = img_path + imgname;
     var imgObj = document.getElementById(img_id);
-    imgObj.height = document.body.clientWidth * 1;
+    imgObj.height = document.body.clientWidth;
+    // imgObj.width = 300;
     imgObj.src=fileName;
 }
