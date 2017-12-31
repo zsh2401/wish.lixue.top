@@ -1,14 +1,16 @@
-#waterflow{
+.waterflow{
     width: 100%;
-    column-width: 50%;
+    column-width: 48%;
     -webkit-column-width: 250px;;
     -webkit-column-gap: 5px;
     column-gap: 5px;
     column-count: 2;
 }
-#waterflow img{
+.waterflow img{
+    /* display: none; */
     width: 100%;
+    height: auto;
 }
-#waterflow div{
+.waterflow div{
     margin: 5px;
 }
