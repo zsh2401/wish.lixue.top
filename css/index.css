@@ -1,21 +1,19 @@
 body{
-    width: 100%;
-    height: 100%;
+    margin: 0;
+    background-color: aqua;
 }
 #mainDiv{
     width: 100%;
-    height:950px;
-    margin: 0;
-    background-color: aquamarine;
-}
-#content{
+    height: 100%;
     position: relative;
-    top:100px;
-    width: 80%;
-    height:800px;
+}
+#container{
     margin-left: auto;
     margin-right: auto;
-    background-color: brown;
+    width: 80%;
+    margin-top: 10%;
+    height: 3000px;
+    background-color: darkgray;
 }
 #greetings{
     position: absolute;
@@ -33,11 +31,9 @@ body{
 #greetings .space{
     margin-left: 80px;
 }
-#imgs{
-    float: right;
-    height:100%;
-    background-color: aqua;
-
+#header_imgs{
+    height:50%;
+    background-color: red;
 }
 #clock{
     clear: both;
