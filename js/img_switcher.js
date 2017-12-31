@@ -3,7 +3,7 @@ var img_path = "img/";
 var img_id = "header_img";
 var currentIndex=1;
 var maxIndex=imgs.length; 
-function autoSwitch(){
+function switchImg(){
     if(currentIndex >= maxIndex){
         currentIndex = 0;
     }

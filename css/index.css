@@ -1,11 +1,10 @@
 body{
     margin: 0;
-    background-color: aqua;
+    background-color:#FFFFEE;
 }
 #mainDiv{
     width: 100%;
     height: auto;
-    /* position: relative; */
 }
 #container{
     margin-left: auto;
@@ -14,12 +13,11 @@ body{
     margin-top: 5%;
     height: auto;
     position: relative;
-    background-color: darkgray;
+    /* background-color: darkgray; */
 }
 #header_imgs{
     width:100%;
-    /* height:400px; */
-    background-color: red;
+    /* background-color: red; */
 }
 
 #greetings{
@@ -30,42 +28,37 @@ body{
     margin-left: auto;
     margin-right: auto;
     font-size:30px;
-    background-color: bisque; 
+    /* background-color: bisque;  */
 }
 #greetings .text{
-    color: blueviolet;
+    color: deepskyblue;
 }
 #greetings .space{
     margin-left: 80px;
 }
 
-#clock{
-    clear: both;
-    background-color: red;
-    font-size: 50px;
-    text-align: center;
-    margin-left: 10px;
-    position: absolute;
-    width: 100%;
-    height:100px;
-    margin: 0;
-    left:0px;
-    bottom :0px;
-}
-
 #clockregion{
     clear: both;
-    background-color: blue;
+    /* background-color: blue; */
     width: 100%;
     height:300px;
     margin: 0;
-    
+    /* text-align: center; */
 }
 #clockregion .clock{
-    fo
+    /* clear: both; */
+    margin-left: 20%;
+    /* text-align: center; */
+    color: darkcyan;
+}
 
+#clockregion .timevalue{
+    font-size: 70px;
+}
+#clockregion .timeunit{
+    font-size: 40px;
 }
 #clockregion .message{
-
-
+    margin-left: 20%;
+    font-size: 30px;
 }

@@ -1,6 +1,6 @@
 /*Change the time to change */
 var currentNum = 0;
-var clockId = "clock"
+var clockId = "ck"
 var timestampForExam = 1528387200;
 function changeTime(){
 	var current = new Date();
@@ -14,10 +14,10 @@ function changeTime(){
 	var mins = Math.round(over % 3600 / 60);
 	var secs = Math.round(over % 60);
 
-	var strLastDay = "<span class=\"digit\">" + day.lenWithZero() + "</span>" + "<span class=\"unit\">天</span>";
-	var strHours = "<span class=\"digit\">" + hrs.lenWithZero() + "</span>"+ "<span class=\"unit\">时</span>";
-	var strMin = "<span class=\"digit\">" + mins.lenWithZero() + "</span>"+ "<span class=\"unit\">分</span>";
-	var strSec = "<span class=\"digit\">" + secs.lenWithZero() + "</span>"+ "<span class=\"unit\">秒</span>";
+	var strLastDay = "<span class=\"timevalue\">" + day.lenWithZero() + "</span>" + "<span class=\"timeunit\">天</span>";
+	var strHours = "<span class=\"timevalue\">" + hrs.lenWithZero() + "</span>"+ "<span class=\"timeunit\">时</span>";
+	var strMin = "<span class=\"timevalue\">" + mins.lenWithZero() + "</span>"+ "<span class=\"timeunit\">分</span>";
+	var strSec = "<span class=\"timevalue\">" + secs.lenWithZero() + "</span>"+ "<span class=\"timeunit\">秒</span>";
 
 	$("#" + clockId).html(strLastDay + strHours + strMin + strSec);	
 }
