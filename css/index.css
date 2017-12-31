@@ -42,7 +42,8 @@ body{
 #clock{
     clear: both;
     background-color: aqua;
-	font-size: 86px;
+    font-size: 40px;
+    text-align: center;
     margin-left: 10px;
     position: absolute;
     width: 40%;
