@@ -10,6 +10,7 @@ function autoSwitch(){
     }
     setImg(imgs[currentIndex]);
     currentIndex++;
+    
 }
 function setImg(imgname){
     fileName = img_path + imgname;
