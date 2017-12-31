@@ -13,6 +13,6 @@ function autoSwitch(){
 function setImg(imgname){
     fileName = img_path + imgname;
     var imgObj = document.getElementById(img_id);
+    imgObj.height = document.body.clientWidth * 1;
     imgObj.src=fileName;
-    imgObj.Height = document.body.clientWidth / 2;
 }
