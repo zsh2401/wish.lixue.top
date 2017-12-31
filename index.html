@@ -1,39 +1,22 @@
+<!DOCTYPE html>
 <html>
-    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh-cn">
     <head>
-        <title>致李学</title>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/functions.js"></script>
-        <link href="css/default.css" type="text/css" rel="stylesheet">
+            <meta charset="UTF-8">
+            <title>Testing</title>
+            <link href="css/index.css" type="text/css" rel="stylesheet">
     </head>
-
     <body>
         <div id="mainDiv">
-            <div id="greetings"> 
-                    <span class="text">致李学:</span><br/>
-                    <span class="space"/><span class="text">No matter the ending is perfect or not, you cannot disappear from my world. </span><br/>
+            <div id="content">
+                    <div id="greetings">
+                        <span class="space"></span><span class="text">asdasadssasaasadsasa</span><br/>
+                        
+                    </div>
+                    <div id="imgs">
+                        <img width=100% height=100%  src="img/a.jpg">
+                    </div>
+                    <div id="clock">xxx</div>
             </div>
-            <video id="video" autoplay="true" loop="true" src="video/header.mp4">
-                您的浏览器不支持 video 标签。
-            </video>
-			<!--
-            <div id="clock">
-                <div id="message">距离高考还有</div>
-                <div id="lastTimeClock"></div>
-            </div>
-			-->
         </div>
-
-        <!-- Effect -->
-		<!--
-        <audio id="bgm" loop="loop" preload="auto" autoplay="autoplay" src="sound/bgm.mp3"></audio>-->
-        <script type="text/javascript">
-            bgm = document.getElementById('bgm');
-            bgm.volume = 0.13;
-            $("#greetings").typewriter();
-            setInterval(function () {
-				changeTime();
-			}, 500);
-        </script>
     </body>
 </html>

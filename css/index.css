@@ -1,0 +1,53 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+#mainDiv{
+    width: 100%;
+    height:950px;
+    margin: 0;
+    background-color: aquamarine;
+}
+#content{
+    position: relative;
+    top:100px;
+    width: 80%;
+    height:800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: brown;
+}
+#greetings{
+    word-wrap: break-word;
+    word-break: break-all;
+    float:left;
+    width:500px;
+    height:600px;
+    font-size: 40px;
+    background-color: bisque; 
+}
+#greetings .text{
+    color: blueviolet;
+}
+#greetings .space{
+    margin-left: 80px;
+}
+#imgs{
+    float: right;
+    width: 50%;
+    height:100%;
+    background-color: aqua;
+
+}
+#clock{
+    clear: both;
+    background-color: aqua;
+	font-size: 86px;
+    margin-left: 10px;
+    position: absolute;
+    width: 50%;
+    height:100px;
+    margin: 0;
+    left:0px;
+    bottom :0px;
+}
