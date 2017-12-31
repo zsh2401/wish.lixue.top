@@ -3,9 +3,11 @@
     <head>
             <meta charset="UTF-8">
             <title>Testing</title>
-            <script type="text/javascript" src="js/functions.js"></script>
             <link href="css/index.css" type="text/css" rel="stylesheet">
+            <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/functions.js"></script>
             <script type="text/javascript" src="js/img_switcher.js"></script>
+            <script type="text/javascript" src="js/clock.js"></script>
     </head>
     <body>
         <div id="mainDiv">
@@ -20,10 +22,16 @@
                         <span class="space"></span><span class="text">曾经沧海难为水</span><br/>
                         <span class="space"></span><span class="text">He has all the virtues I dislike, and none of the vices I admire.</span><br/>
                     </div>
+                    <div id="clockregion">
+
+                        
+                    </div>
                 </div>
         </div>
         <script type="text/javascript">
             setInterval(function(){autoSwitch()},2000);
+            setInterval(function(){changeTime()},500);
+            $("#greetings").typewriter();
         </script>
     </body>
 </html>
