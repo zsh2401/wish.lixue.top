@@ -1,12 +1,3 @@
-/*Text Typing effect*/
-Number.prototype.lenWithZero = function() {  
-    var strText = this.toString();  
-    while (strText.length < 2) {  
-        strText = '0' + strText;  
-    }  
-    return strText;  
-};  
-
 (function($) {
 	$.fn.typewriter = function() {
 		this.each(function() {
@@ -19,6 +10,7 @@ Number.prototype.lenWithZero = function() {
 				} else {
 					progress++;
 				}
+
 				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
 				if (progress >= str.length) {
 					clearInterval(timer);
@@ -28,4 +20,3 @@ Number.prototype.lenWithZero = function() {
 		return this;
 	};
 })(jQuery);
-/*Text Typing effect*/

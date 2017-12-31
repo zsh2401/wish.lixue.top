@@ -3,10 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>致李学</title>
-        <script src="js/functions.js"></script>
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+        <script src="js/functions.js"></script>
         <script src="js/autoscorll.js"/></script>
+        
         <link href="js/jquery.mobile-1.4.5.min.css" type="text/css" rel="stylesheet">
         <link href="css/index.css" type="text/css" rel="stylesheet">
         <link href="css/waterflow.css" type="text/css" rel="stylesheet">
@@ -22,13 +24,17 @@
                     <div><img src="img/f.jpg"></div>
                     <div><img src="img/c.jpg"></div>
                     <div><img src="img/f.jpg"></div>
-                    </div>
-                    <div class="greetings">
-                    <span class="head">祝你生日快乐~</span><br>
-                    <span class="paragraph">阿还是开机安飞士看见了发生可发酵饲料哈书法家客户</span><br>
-                    <span class="paragraph">阿还是开机安飞士看见了发生可发酵饲料哈书法家客户</span><br>
+                </div>
+                <div id="gr1" class="greetings">
+                        <span class="head">祝你生日快乐~</span><br>
+                        <span class="paragraph">阿还是开机安飞士看见了发生可发酵饲料哈书法家客户</span><br>
+                        <span class="paragraph">阿还是开机安飞士看见了发生可发酵饲料哈书法家客户</span><br>
                 </div>
             </div>
         </div>
+        <script>
+            var gr1 =  document.getElementById('gr1');
+            gr1.typewriter();
+        </script>
     </body>
 </html>

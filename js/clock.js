@@ -21,4 +21,11 @@ function changeTime(){
 
 	$("#" + clockId).html(strLastDay + strHours + strMin + strSec);	
 }
+Number.prototype.lenWithZero = function() {  
+    var strText = this.toString();  
+    while (strText.length < 2) {  
+        strText = '0' + strText;  
+    }  
+    return strText;  
+};  
 /*Change the time to change */
