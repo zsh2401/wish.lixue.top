@@ -15,8 +15,17 @@ function as_check(){
     }
 }
 function as_event_init(){
-    $(document).on("tapon",function(){
-        alert("xxxx");
+     $(document).on("mousedown",function(){
+        autoscorll_stop();
+     });
+     $(document).on("mouseup",function(){
+        autoscorll_start();
+     });
+     $(document).on("scorllstart",function(){
+        autoscorll_stop();
+     });
+     $(document).on("scorllstop",function(){
+        autoscorll_start();
      });
 }
 function autoscorll_start(){
