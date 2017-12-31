@@ -1,0 +1,16 @@
+#greetings{
+    word-wrap: break-word;
+    word-break: keep-all;
+    width:100%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:30px;
+    /* background-color: bisque;  */
+}
+#greetings .text{
+    color: deepskyblue;
+}
+#greetings .space{
+    margin-left: 80px;
+}

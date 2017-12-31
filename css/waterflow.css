@@ -1,0 +1,14 @@
+#waterflow{
+    width: 100%;
+    column-width: 50%;
+    -webkit-column-width: 250px;;
+    -webkit-column-gap: 5px;
+    column-gap: 5px;
+    column-count: 2;
+}
+#waterflow img{
+    width: 100%;
+}
+#waterflow div{
+    margin: 5px;
+}

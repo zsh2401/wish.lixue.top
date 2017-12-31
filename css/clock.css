@@ -1,0 +1,25 @@
+#clockregion{
+    clear: both;
+    /* background-color: blue; */
+    width: 100%;
+    height:300px;
+    margin: 0;
+    /* text-align: center; */
+}
+#clockregion .clock{
+    /* clear: both; */
+    margin-left: 20%;
+    /* text-align: center; */
+    color: darkcyan;
+}
+
+#clockregion .timevalue{
+    font-size: 70px;
+}
+#clockregion .timeunit{
+    font-size: 40px;
+}
+#clockregion .message{
+    margin-left: 20%;
+    font-size: 30px;
+}
