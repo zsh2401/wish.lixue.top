@@ -3,38 +3,66 @@
     <head>
         <meta charset="UTF-8">
         <title>致李学</title>
+        <!-- <link href="js/jquery.mobile-1.4.5.min.css" type="text/css" rel="stylesheet"> -->
         <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <!-- <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
 
         <script src="js/functions.js"></script>
+        <script src="js/onThere.js"></script>
         <script src="js/autoscorll.js"/></script>
-        
-        <link href="js/jquery.mobile-1.4.5.min.css" type="text/css" rel="stylesheet">
+        <script src="js/clock.js"/></script>
+
         <link href="css/index.css" type="text/css" rel="stylesheet">
         <link href="css/waterflow.css" type="text/css" rel="stylesheet">
         <link href="css/greetings.css" type="text/css" rel="stylesheet">
-        <link href="css/birthdayregion.css" type="text/css" rel="stylesheet">
+        <link href="css/clock.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div id="container">
-            <div id="birthdayregion">
-                <div class="waterflow">
-                    <div><img src="img/b.jpg"></div>
-                    <div><img src="img/a.jpg"></div>
-                    <div><img src="img/f.jpg"></div>
-                    <div><img src="img/c.jpg"></div>
-                    <div><img src="img/f.jpg"></div>
+        <div style="display:none;" id="container">
+            <div id="header">这是一个未完成的页面,不代表最终品质</div>
+            <div id="hpybthday">
+                <img class="centerImage" src="images/hpbd.jpg"/>
+                <div id="birthdaycard" class="waterflow">
+                    <div><img src="images/greetings2.jpg"></div>
+                    <div><img src="images/greetings1.jpg"></div>
+                    <div><img src="images/greetings0.jpg"></div>
                 </div>
-                <div id="gr1" class="greetings">
-                        <span class="head">祝你生日快乐~</span><br>
-                        <span class="paragraph">阿还是开机安飞士看见了发生可发酵饲料哈书法家客户</span><br>
-                        <span class="paragraph">阿还是开机安飞士看见了发生可发酵饲料哈书法家客户</span><br>
+                <div id="gr1"  class="greetings">
+                    <span class="head">祝你生日快乐~</span><br>
+                    <span class="paragraph">There is greetings...</span><br>
+                    <span class="paragraph">There is greetings..</span><br>
                 </div>
             </div>
+            <div id="pics" class="waterflow">
+                <div><img src="images/a.jpg"></div>
+                <div><img src="images/b.jpg"></div>
+                <div><img src="images/c.jpg"></div>
+                <div><img src="images/d.jpg"></div>
+                <div><img src="images/e.jpg"></div>
+                <div><img src="images/f.jpg"></div>
+            </div>
+            <div id="gr2" style="height:700px;" class="greetings">
+                <span class="head">马上就要高考了~</span><br>
+                <span class="paragraph">这是人生最重要的转折点</span><br>
+                <span class="paragraph">希望你能继续努力</span><br>
+                <span class="paragraph"> AND ALWAYS REMEMBER: Life is not measured by the number of breaths we take, but by the moments that take our breath away</span><br>
+            </div>
+            <div style="display:inherit" id="clockregion">
+                <span class="message">距离高考还有</span>
+                <div id="ck" class="clock"></div>
+                <span class="message">加油!</span>
+            </div>
         </div>
+        <audio id="bgm"  src="sound/bgm.mp3"></audio>
         <script>
-            var gr1 =  document.getElementById('gr1');
-            gr1.typewriter();
+            var bgm = document.getElementById('bgm');
+            bgm.volume=0.10;
+            // bgm.play();
+            var gts =  document.getElementsByClassName("greetings");
+            for(var i = 0;i< gts.length;i++){
+                $(gts[i]).typewriter();
+            }
+            $("#container").fadeIn(1000);
         </script>
     </body>
 </html>

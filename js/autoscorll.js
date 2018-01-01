@@ -5,10 +5,14 @@ need
 jquery
 jquery-mobile
 */
-var _as_timer;
 as_check();
-as_event_init();
-autoscorll_start();
+as_begin();
+function as_begin(){
+    console.log("auto scorll init...");
+    as_event_init();
+    autoscorll_start();
+    console.log("auto scorll start");
+}
 function as_check(){
     if(typeof jQuery =='undefined'){
         alert("jQuery library is not found!");
@@ -28,15 +32,22 @@ function as_event_init(){
         autoscorll_start();
      });
 }
+var _as_timer;
 function autoscorll_start(){
-    _as_timer=setInterval("__scorllDown()",10);
+    _as_timer=setInterval("__scorllDown()",25);
 }
 function autoscorll_stop(){
     clearInterval(_as_timer);
 }
+function __currentscrollTop(){
+    return $(document).scrollTop(); 
+}
+function __pageHeight(){
+    return $(document).height(); 
+}
 function __scorllDown(){
-    var _crt = document.documentElement.scrollTop;
-    var _height = document.body.scrollHeight; 
+    var _crt = __currentscrollTop();
+    var _height = __pageHeight();
     if(_crt<_height){
         scroll(0,_crt + 1);
     }else{

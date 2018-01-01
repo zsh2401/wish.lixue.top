@@ -2,6 +2,7 @@
 var currentNum = 0;
 var clockId = "ck"
 var timestampForExam = 1528387200;
+setInterval(changeTime,1000);
 function changeTime(){
 	var current = new Date();
 	var timestampForNow = current.getTime() / 1000;
