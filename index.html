@@ -33,6 +33,7 @@
                     <span class="paragraph">There is greetings...</span><br>
                     <span class="paragraph">There is greetings..</span><br>
                 </div>
+                <div id="interval" style="height:200px"></div>
             </div>
             <div id="ctregion" style="display:none;">
                 <div id="pics" class="waterflow">
@@ -66,6 +67,7 @@
             $("#gr1").typewriter(function(){
                 console.log("gr1 typed");
                 $("#ctregion").fadeIn(3000);
+                $("#interval").fadeOut();
                 $("#gr2").typewriter(function(){
                     $("#clockregion").fadeIn(5000);
             });
