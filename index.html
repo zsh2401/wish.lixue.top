@@ -8,7 +8,8 @@
         <!-- <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
 
         <script src="js/functions.js"></script>
-        <script src="js/onThere.js"></script>
+        <!-- <script src="js/scorllTo.js"></script> -->
+        <!-- <script src="js/onThere.js"></script> -->
         <script src="js/autoscorll.js"/></script>
         <script src="js/clock.js"/></script>
 
@@ -33,36 +34,42 @@
                     <span class="paragraph">There is greetings..</span><br>
                 </div>
             </div>
-            <div id="pics" class="waterflow">
-                <div><img src="images/a.jpg"></div>
-                <div><img src="images/b.jpg"></div>
-                <div><img src="images/c.jpg"></div>
-                <div><img src="images/d.jpg"></div>
-                <div><img src="images/e.jpg"></div>
-                <div><img src="images/f.jpg"></div>
-            </div>
-            <div id="gr2" style="height:700px;" class="greetings">
-                <span class="head">马上就要高考了~</span><br>
-                <span class="paragraph">这是人生最重要的转折点</span><br>
-                <span class="paragraph">希望你能继续努力</span><br>
-                <span class="paragraph"> AND ALWAYS REMEMBER: Life is not measured by the number of breaths we take, but by the moments that take our breath away</span><br>
-            </div>
-            <div style="display:inherit" id="clockregion">
-                <span class="message">距离高考还有</span>
-                <div id="ck" class="clock"></div>
-                <span class="message">加油!</span>
+            <div id="ctregion" style="display:none;">
+                <div id="pics" class="waterflow">
+                    <div><img src="images/a.jpg"></div>
+                    <div><img src="images/b.jpg"></div>
+                    <div><img src="images/c.jpg"></div>
+                    <div><img src="images/d.jpg"></div>
+                    <div><img src="images/e.jpg"></div>
+                    <div><img src="images/f.jpg"></div>
+                </div>
+                <div id="gr2" class="greetings">
+                    <span class="head">马上就要高考了~</span><br>
+                    <span class="paragraph">这是人生最重要的转折点</span><br>
+                    <span class="paragraph">希望你能继续努力</span><br>
+                    <span class="paragraph"> AND ALWAYS REMEMBER: Life is not measured by the number of breaths we take, but by the moments that take our breath away</span><br>
+                </div>
+                <div style="height:100px"></div>
+                <div style="display:none" id="clockregion">
+                    <span class="message">距离高考还有</span>
+                    <div id="ck" class="clock"></div>
+                    <span class="message">加油!</span>
+                </div>
             </div>
         </div>
         <audio id="bgm"  src="sound/bgm.mp3"></audio>
         <script>
             var bgm = document.getElementById('bgm');
             bgm.volume=0.10;
-            // bgm.play();
-            var gts =  document.getElementsByClassName("greetings");
-            for(var i = 0;i< gts.length;i++){
-                $(gts[i]).typewriter();
-            }
+            bgm.play();
             $("#container").fadeIn(1000);
+            $("#gr1").typewriter(function(){
+                console.log("gr1 typed");
+                $("#ctregion").fadeIn(3000);
+                $("#gr2").typewriter(function(){
+                    $("#clockregion").fadeIn(5000);
+            });
+            });
         </script>
     </body>
 </html>

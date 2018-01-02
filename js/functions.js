@@ -1,4 +1,4 @@
-jQuery.fn.typewriter = function() {
+jQuery.fn.typewriter = function(finishedcallback=null) {
 	this.each(function(index,ele) {
 		var $ele = $(this), str = $ele.html(), progress = 0;
 		$ele.html('');
@@ -11,8 +11,10 @@ jQuery.fn.typewriter = function() {
 			}
 			$ele.html(str.substring(0, progress) + (progress & 1 ? '' : ''));
 			if (progress >= str.length) {
-				// $ele.html(str.substring(0, progress - 1));
 				clearInterval(timer);
+				if(finishedcallback != null){
+					finishedcallback();
+				}
 			}
 		}, 75);
 	});

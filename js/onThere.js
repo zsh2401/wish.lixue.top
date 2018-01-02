@@ -9,7 +9,7 @@ jQuery.fn.setOnThereHandler= function(method){
     __eles_func[__eles_func.length] = method;
 }
 function __getElementOffsetTop(ele){
-    return ele.offset().top
+    return ele.offset().top;
 }
 function __getCurrentScorll(){
     return document.documentElement.scrollTop;
@@ -20,6 +20,7 @@ function s_setOnThereHandler(ele,method){
     __eles_func[__eles_func.length] = method;
 }
 var timer;
+
 function __init__(){
     timer = setInterval("__onThereCheck()",1000);
 }

@@ -6,6 +6,7 @@
     margin-left: auto;
     margin-right: auto;
     font-size:50px;
+    min-height: 100px;
 }
 .greetings .head{
     color: deepskyblue;
