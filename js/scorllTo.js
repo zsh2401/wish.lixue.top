@@ -7,6 +7,7 @@ function registerScrollTo(eId,handler,offsetValue=300){
     data.offsetValue = offsetValue;
     _stRecords[_stRecords.length] = data;
 }
+// function registerScrollTo_jqObj(jqObj,handler,offsetValue = 300)
 /* public functions */
 
 
@@ -49,7 +50,7 @@ function __stiCheck__(){
         }
         if(crt >= data.top - data.offsetValue){
             _stRecords.__stiremove__(i);
-            data.handler();
+            data.handler(data.ele);
         }
     }
 }

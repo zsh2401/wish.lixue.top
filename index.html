@@ -2,15 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>致李学</title>
-        <!-- <link href="js/jquery.mobile-1.4.5.min.css" type="text/css" rel="stylesheet"> -->
+        <title>祝福你!李学!</title>
         <script src="js/jquery-3.2.1.min.js"></script>
-        <!-- <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
-
         <script src="js/functions.js"></script>
         <script src="js/scorllTo.js"></script>
-        <!-- <script src="js/onThere.js"></script> -->
-        <script src="js/autoscorll.js"/></script>
+        <script src="js/waterflow.js"></script>
+        <!-- <script src="js/autoscorll.js"/></script> -->
         <script src="js/clock.js"/></script>
 
         <link href="css/index.css" type="text/css" rel="stylesheet">
@@ -21,28 +18,75 @@
     <body>
         <div  id="container">
             <div id="header">这是一个未完成的页面,不代表最终品质</div>
+
+
+
+
+
             <div id="hpybthday">
                 <img class="centerImage" src="images/hpbd.jpg"/>
                 <div id="birthdaycard" class="waterflow">
-                    <div><img src="images/greetings2.jpg"></div>
-                    <div><img src="images/greetings1.jpg"></div>
-                    <div><img src="images/greetings0.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/0.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/1.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/2.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/11.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/4.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/5.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/3.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/7.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/8.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/9.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/10.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/6.jpg"></div>
+                    <div><img src="images/BirthdayGreetingCard/12.jpg"></div>
                 </div>
-                <div id="gr1" style="visibility:hidden;"  class="greetings">
+                <div id="gr1" class="greetings">
                     <span class="head">祝你生日快乐~</span><br>
                     <span class="paragraph">There is greetings...</span><br>
                     <span class="paragraph">There is greetings..</span><br>
                 </div>
                 <div id="interval" style="height:200px"></div>
             </div>
+
+
+
+            <center>
+                    <span style="visibility:hidden;" id="memregionTitle" class="regionTitle">我们的高中回忆</span>
+            </center>
+            <div id="memoriesregion" style="visibility:hidden;">
+                    <div id="mempics" class="waterflow">
+                            <div><img src="images/Memories/0.jpg"></div>
+                            <div><img src="images/Memories/1.jpg"></div>
+                            <div><img src="images/Memories/2.jpg"></div>
+                            <div><img src="images/Memories/3.jpg"></div>
+                            <div><img src="images/Memories/4.jpg"></div>
+                            <div><img src="images/Memories/5.jpg"></div>
+                            <div><img src="images/Memories/6.jpg"></div>
+                            <div><img src="images/Memories/7.jpg"></div>
+                            <div><img src="images/Memories/8.jpg"></div>
+                            <div><img src="images/Memories/9.jpg">
+                                <span class="des">在运动场上....</span>
+                            </div>
+                            <div><img src="images/Memories/10.jpg"></div>
+                            <div><img src="images/Memories/11.jpg"></div>
+                            <div><img src="images/Memories/12.jpg"></div>
+                            <div><img src="images/Memories/13.jpg"></div>
+                    </div>
+            </div>
+
+
+
+            <center>
+                    <span style="visibility:hidden;" id="gcGreetings" class="regionTitle">高考祝福</span>
+            </center>
             <div id="ctregion" style="visibility:hidden;">
-                <div id="pics" class="waterflow">
-                    <div><img src="images/a.jpg"></div>
-                    <div><img src="images/b.jpg"></div>
-                    <div><img src="images/c.jpg"></div>
-                    <div><img src="images/d.jpg"></div>
-                    <div><img src="images/e.jpg"></div>
-                    <div><img src="images/f.jpg"></div>
+                <div id="landspace" class="waterflow">
+                        <div><img src="images/landspace/a.jpg"></div>
+                        <div><img src="images/landspace/b.jpg"></div>
+                        <div><img src="images/landspace/c.jpg"></div>
+                        <div><img src="images/landspace/d.jpg"></div>
+                        <div><img src="images/landspace/e.jpg"></div>
+                        <div><img src="images/landspace/f.jpg"></div>
                 </div>
                 <div id="gr2" class="greetings">
                     <span class="head">马上就要高考了~</span><br>
@@ -50,37 +94,44 @@
                     <span class="paragraph">希望你能继续努力</span><br>
                     <span class="paragraph"> AND ALWAYS REMEMBER: Life is not measured by the number of breaths we take, but by the moments that take our breath away</span><br>
                 </div>
+
                 <div style="height:100px"></div>
-                <div style="display:none" id="clockregion">
+                <div style="display:none;" id="clockregion">
                     <span class="message">距离高考还有</span>
                     <div id="ck" class="clock"></div>
                     <span class="message">加油!</span>
                 </div>
             </div>
+
+
+
         </div>
-        <audio id="bgm"  src="sound/bgm.mp3"></audio>
+        <audio id="bgm" src="sound/bgm.mp3"></audio>
         <script>
             var bgm = document.getElementById('bgm');
             bgm.volume=0.10;
-            bgm.play();
-            registerScrollTo("#gr1",function(){
-                effectFadeIn("gr1",1000);
-                $("#gr1").typewriter();
-            });
-            registerScrollTo("#ctregion",function(){
-                effectFadeIn("ctregion",3000);
-            },-200);
-
-            console.log("fuck" + document.documentElement.scrollTop - $("#gr1").height());
+            // bgm.play();
+            waterflowEffectInit();
             $("#container").fadeIn(1000);
-            // $("#gr1").typewriter(function(){
-            //     console.log("gr1 typed");
-            //     $("#ctregion").fadeIn(3000);
-            //     $("#interval").fadeOut();
-            //     $("#gr2").typewriter(function(){
-            //         $("#clockregion").fadeIn(5000);
-            // });
-            // });
+
+            registerScrollTo("#gr1",function(ele){
+                $("#gr1").typewriterWithFadeIn();
+            },300);
+
+            registerScrollTo("#memregionTitle",function(ele){
+                ele.effectFadeIn();
+            },300);
+
+            registerScrollTo("#gcGreetings",function(ele){
+                ele.effectFadeIn();
+            },300);
+
+            registerScrollTo("#gr2",function(ele){
+                effectFadeIn("gr2",0);
+                $("#gr2").typewriter(function(){
+                        $("#clockregion").fadeIn(3000);
+                });
+            },-200);
         </script>
     </body>
 </html>

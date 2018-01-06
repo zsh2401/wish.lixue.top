@@ -20,10 +20,23 @@ jQuery.fn.typewriter = function(finishedcallback=null) {
 	});
 	return this;
 };
+jQuery.fn.typewriterWithFadeIn = function(ms=1000,finishedcallback=null) {
+	this[0].style.display="none";
+	this[0].style.visibility="visible"
+	this.typewriter(finishedcallback);
+	this.fadeIn(1000);
+	return this;
+};
+jQuery.fn.effectFadeIn = function(ms=1000) {
+	this[0].style.display="none";
+	this[0].style.visibility="visible"
+	this.fadeIn(ms);
+	return this;
+};
 function effectFadeIn(eleId,ms=1000){
 	var ele = document.getElementById(eleId);
 	ele.style.display="none";
 	ele.style.visibility="visible"
-	$(ele).fadeIn(ms);
+	$(ele).fadeIn(1000);
 }
 
