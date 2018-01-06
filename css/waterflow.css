@@ -1,9 +1,20 @@
 .waterflow{
     width: 100%;
     /* clear: both; */
-    column-width: 40%;
-    -webkit-column-width: 250px;;
+    
+    -moz-column-width: 40%;
+    -moz-column-gap: 5px;
+
+    -o-column-width: 40%;
+    -o-column-gap: 5px;
+
+    -ms-column-width: 40%;
+    -ms-column-gap: 5px;
+
+    -webkit-column-width: 40%;
     -webkit-column-gap: 5px;
+    
+    column-width: 40%;
     column-gap: 5px;
     column-count: 2;
     /* position: absolute; */
