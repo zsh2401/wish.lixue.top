@@ -1,4 +1,5 @@
 .greetings{
+    clear: both;
     word-wrap: break-word;
     word-break: keep-all;
     width:80%;  

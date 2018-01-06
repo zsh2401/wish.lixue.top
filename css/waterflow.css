@@ -1,12 +1,12 @@
 .waterflow{
     width: 100%;
-    clear: both;
+    /* clear: both; */
     column-width: 40%;
     -webkit-column-width: 250px;;
     -webkit-column-gap: 5px;
     column-gap: 5px;
     column-count: 2;
-    position: relative;
+    /* position: absolute; */
 }
 .waterflow img{
     width: 100%;
@@ -20,6 +20,6 @@
 }
 .waterflow .des{
     text-align: center;
-    font-size: 25px;
+    font-size: 50px;
     color: darkorange;
 }

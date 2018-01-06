@@ -1,8 +1,14 @@
 /*Change the time to change */
+var clockId = null;
+function clockStart(_clockId = "ck"){
+	setInterval(changeTime,1000);
+	clockId = _clockId;
+}
+function clockShow(clockRegionId = "clockregion"){
+	$("#" + clockRegionId).hiddenFadeIn(4000);
+}
 var currentNum = 0;
-var clockId = "ck"
 var timestampForExam = 1528387200;
-setInterval(changeTime,1000);
 function changeTime(){
 	var current = new Date();
 	var timestampForNow = current.getTime() / 1000;

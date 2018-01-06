@@ -7,7 +7,17 @@ function registerScrollTo(eId,handler,offsetValue=300){
     data.offsetValue = offsetValue;
     _stRecords[_stRecords.length] = data;
 }
-// function registerScrollTo_jqObj(jqObj,handler,offsetValue = 300)
+jQuery.fn.registerOnEnterScreenEvent = function(handler,checkOffsetValue=300) {
+    var data = new Object();
+    // alert("x");
+    data.ele = $(this);
+    data.top = __stiGetEleTop(data.ele);
+    data.handler = handler;
+    data.offsetValue = checkOffsetValue;
+    _stRecords[_stRecords.length] = data;
+};
+
+
 /* public functions */
 
 
@@ -45,8 +55,9 @@ function __stiCheck__(){
     var crt = __stiGetScorllBottom();
     for(var i = 0;i< _stRecords.length;i++){
         var data = _stRecords[i];
-        while(data.top == 0){
-            data.top = __stiGetEleTop(data.ele);
+        data.top = __stiGetEleTop(data.ele);
+        if(data.top == 0){
+            continue;
         }
         if(crt >= data.top - data.offsetValue){
             _stRecords.__stiremove__(i);

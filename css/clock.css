@@ -1,8 +1,10 @@
 #clockregion{
-    clear: both;
+    visibility: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
     width: 100%;
-    height:300px;
-    margin: 0;
 }
 #clockregion .clock{
     margin-left: 20%;

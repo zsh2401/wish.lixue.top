@@ -9,6 +9,8 @@
         <script src="js/waterflow.js"></script>
         <!-- <script src="js/autoscorll.js"/></script> -->
         <script src="js/clock.js"/></script>
+        <script src="js/region.js"/></script>
+        <script src="js/greetings.js"/></script>
 
         <link href="css/index.css" type="text/css" rel="stylesheet">
         <link href="css/waterflow.css" type="text/css" rel="stylesheet">
@@ -16,15 +18,10 @@
         <link href="css/clock.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div  id="container">
-            <div id="header">这是一个未完成的页面,不代表最终品质</div>
-
-
-
-
-
-            <div id="hpybthday">
-                <img class="centerImage" src="images/hpbd.jpg"/>
+        <div id="container">
+            
+            <img style="width:100%;" src="images/hpbd.jpg">
+            <div class="region">
                 <div id="birthdaycard" class="waterflow">
                     <div><img src="images/BirthdayGreetingCard/0.jpg"></div>
                     <div><img src="images/BirthdayGreetingCard/1.jpg"></div>
@@ -41,19 +38,15 @@
                     <div><img src="images/BirthdayGreetingCard/12.jpg"></div>
                 </div>
                 <div id="gr1" class="greetings">
-                    <span class="head">祝你生日快乐~</span><br>
-                    <span class="paragraph">There is greetings...</span><br>
-                    <span class="paragraph">There is greetings..</span><br>
+                    <span class="paragraph">没有五彩的鲜花，没有浪漫的诗句，没有贵重的礼物，没有兴奋的惊喜，只有轻轻的祝福，祝你生日快乐！</span><br>
                 </div>
-                <div id="interval" style="height:200px"></div>
+                <div style="height:200px"></div>
             </div>
 
 
 
-            <center>
-                    <span style="visibility:hidden;" id="memregionTitle" class="regionTitle">我们的高中回忆</span>
-            </center>
-            <div id="memoriesregion" style="visibility:hidden;">
+            <div class="region">
+                    <span class="title">我们的高中回忆....</span>
                     <div id="mempics" class="waterflow">
                             <div><img src="images/Memories/0.jpg"></div>
                             <div><img src="images/Memories/1.jpg"></div>
@@ -63,23 +56,19 @@
                             <div><img src="images/Memories/5.jpg"></div>
                             <div><img src="images/Memories/6.jpg"></div>
                             <div><img src="images/Memories/7.jpg"></div>
-                            <div><img src="images/Memories/8.jpg"></div>
-                            <div><img src="images/Memories/9.jpg">
-                                <span class="des">在运动场上....</span>
-                            </div>
+                            <div><img src="images/Memories/9.jpg"></div>
                             <div><img src="images/Memories/10.jpg"></div>
                             <div><img src="images/Memories/11.jpg"></div>
                             <div><img src="images/Memories/12.jpg"></div>
                             <div><img src="images/Memories/13.jpg"></div>
+                            <div><img src="images/Memories/8.jpg"></div>
                     </div>
             </div>
 
 
 
-            <center>
-                    <span style="visibility:hidden;" id="gcGreetings" class="regionTitle">高考祝福</span>
-            </center>
-            <div id="ctregion" style="visibility:hidden;">
+            <div class="region">
+                <span class="title">....</span>
                 <div id="landspace" class="waterflow">
                         <div><img src="images/landspace/a.jpg"></div>
                         <div><img src="images/landspace/b.jpg"></div>
@@ -89,15 +78,16 @@
                         <div><img src="images/landspace/f.jpg"></div>
                 </div>
                 <div id="gr2" class="greetings">
-                    <span class="head">马上就要高考了~</span><br>
-                    <span class="paragraph">这是人生最重要的转折点</span><br>
-                    <span class="paragraph">希望你能继续努力</span><br>
-                    <span class="paragraph"> AND ALWAYS REMEMBER: Life is not measured by the number of breaths we take, but by the moments that take our breath away</span><br>
+                    <span class="head">最后,我想对你说:</span><br>
+                    <span class="paragraph">想摘玫瑰，就要先折刺枝；</span><br>
+                    <span class="paragraph">想走坦途，就要斩除荆棘；</span><br>
+                    <span class="paragraph">想看到天明，就要勇闯夜寂；</span><br>
+                    <span class="paragraph">想考试高中，就要倍加努力;</span><br>
+                    <span class="paragraph">厚德载物，天道酬勤，祝高考顺利！</span><br>
                 </div>
-
                 <div style="height:100px"></div>
-                <div style="display:none;" id="clockregion">
-                    <span class="message">距离高考还有</span>
+                <div id="clockregion">
+                    <span class="message">距离2018高考还有</span>
                     <div id="ck" class="clock"></div>
                     <span class="message">加油!</span>
                 </div>
@@ -111,27 +101,21 @@
             var bgm = document.getElementById('bgm');
             bgm.volume=0.10;
             // bgm.play();
+
             waterflowEffectInit();
-            $("#container").fadeIn(1000);
-
-            registerScrollTo("#gr1",function(ele){
-                $("#gr1").typewriterWithFadeIn();
-            },300);
-
-            registerScrollTo("#memregionTitle",function(ele){
-                ele.effectFadeIn();
-            },300);
-
-            registerScrollTo("#gcGreetings",function(ele){
-                ele.effectFadeIn();
-            },300);
-
-            registerScrollTo("#gr2",function(ele){
-                effectFadeIn("gr2",0);
-                $("#gr2").typewriter(function(){
-                        $("#clockregion").fadeIn(3000);
+            regionEffectInit();
+            clockStart();
+            
+            $("#gr1").registerOnEnterScreenEvent(function(elearg){
+                elearg.typewriterWithFadeIn();
+            });
+            $("#gr2").registerOnEnterScreenEvent(function(elearg){
+                elearg.typewriterWithFadeIn(function(){
+                    clockShow();
                 });
-            },-200);
+            });
+
+            $("#container").fadeIn(1000);
         </script>
     </body>
 </html>

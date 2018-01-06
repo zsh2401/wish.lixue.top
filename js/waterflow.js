@@ -4,9 +4,9 @@ function waterflowEffectInit(){
     for(var i =0;i<waterflows.length;i++){
         var $waterflow =  $(waterflows[i]);
         $waterflow.chirdenForeach(function(index,$ele){
-            registerScrollTo($ele,function(){
-                $ele.s_FadeIn(3000);
-            });
+            $ele.registerOnEnterScreenEvent(function(elearg){
+                elearg.s_FadeIn(3000);
+            },-200)
         });
     }
 }
