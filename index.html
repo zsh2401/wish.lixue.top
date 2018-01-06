@@ -8,7 +8,7 @@
         <!-- <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
 
         <script src="js/functions.js"></script>
-        <!-- <script src="js/scorllTo.js"></script> -->
+        <script src="js/scorllTo.js"></script>
         <!-- <script src="js/onThere.js"></script> -->
         <script src="js/autoscorll.js"/></script>
         <script src="js/clock.js"/></script>
@@ -19,7 +19,7 @@
         <link href="css/clock.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div style="display:none;" id="container">
+        <div  id="container">
             <div id="header">这是一个未完成的页面,不代表最终品质</div>
             <div id="hpybthday">
                 <img class="centerImage" src="images/hpbd.jpg"/>
@@ -28,14 +28,14 @@
                     <div><img src="images/greetings1.jpg"></div>
                     <div><img src="images/greetings0.jpg"></div>
                 </div>
-                <div id="gr1"  class="greetings">
+                <div id="gr1" style="visibility:hidden;"  class="greetings">
                     <span class="head">祝你生日快乐~</span><br>
                     <span class="paragraph">There is greetings...</span><br>
                     <span class="paragraph">There is greetings..</span><br>
                 </div>
                 <div id="interval" style="height:200px"></div>
             </div>
-            <div id="ctregion" style="display:none;">
+            <div id="ctregion" style="visibility:hidden;">
                 <div id="pics" class="waterflow">
                     <div><img src="images/a.jpg"></div>
                     <div><img src="images/b.jpg"></div>
@@ -63,15 +63,24 @@
             var bgm = document.getElementById('bgm');
             bgm.volume=0.10;
             bgm.play();
+            registerScrollTo("#gr1",function(){
+                effectFadeIn("gr1",1000);
+                $("#gr1").typewriter();
+            });
+            registerScrollTo("#ctregion",function(){
+                effectFadeIn("ctregion",3000);
+            },-200);
+
+            console.log("fuck" + document.documentElement.scrollTop - $("#gr1").height());
             $("#container").fadeIn(1000);
-            $("#gr1").typewriter(function(){
-                console.log("gr1 typed");
-                $("#ctregion").fadeIn(3000);
-                $("#interval").fadeOut();
-                $("#gr2").typewriter(function(){
-                    $("#clockregion").fadeIn(5000);
-            });
-            });
+            // $("#gr1").typewriter(function(){
+            //     console.log("gr1 typed");
+            //     $("#ctregion").fadeIn(3000);
+            //     $("#interval").fadeOut();
+            //     $("#gr2").typewriter(function(){
+            //         $("#clockregion").fadeIn(5000);
+            // });
+            // });
         </script>
     </body>
 </html>

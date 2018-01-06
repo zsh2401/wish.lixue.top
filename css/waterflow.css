@@ -6,10 +6,14 @@
     -webkit-column-gap: 5px;
     column-gap: 5px;
     column-count: 2;
+    /* position: relative; */
 }
 .waterflow img{
     width: 100%;
     height: auto;
+    border: 1px solid #000000;
+    box-shadow: #fefefe;
+    border-radius: 5px;
 }
 .waterflow div{
     margin: 5px;

@@ -20,4 +20,10 @@ jQuery.fn.typewriter = function(finishedcallback=null) {
 	});
 	return this;
 };
+function effectFadeIn(eleId,ms=1000){
+	var ele = document.getElementById(eleId);
+	ele.style.display="none";
+	ele.style.visibility="visible"
+	$(ele).fadeIn(ms);
+}
 
