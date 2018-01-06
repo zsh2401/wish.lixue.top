@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- 别看了,这网页的代码贼坑,
+毕竟我是现学的Javascript和html/css -->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -37,10 +39,11 @@
                     <div><img src="images/BirthdayGreetingCard/6.jpg"></div>
                     <div><img src="images/BirthdayGreetingCard/12.jpg"></div>
                 </div>
+                <div style="height:100px"></div>
                 <div id="gr1" class="greetings">
                     <span class="paragraph">没有五彩的鲜花，没有浪漫的诗句，没有贵重的礼物，没有兴奋的惊喜，只有轻轻的祝福，祝你生日快乐！</span><br>
                 </div>
-                <div style="height:200px"></div>
+                <div style="height:100px"></div>
             </div>
 
 
@@ -63,12 +66,17 @@
                             <div><img src="images/Memories/13.jpg"></div>
                             <div><img src="images/Memories/8.jpg"></div>
                     </div>
+                    <div style="height:100px"></div>
+                    <div id="gr3" class="greetings">
+                            <span class="paragraph">海内存知已,天涯若比邻.</span><br>
+                    </div>
+                    <div style="height:100px"></div>
             </div>
 
 
 
             <div class="region">
-                <span class="title">....</span>
+                <span class="title">一中永远会保留在我们最美好的回忆里...</span>
                 <div id="landspace" class="waterflow">
                         <div><img src="images/Landspace/a.jpg"></div>
                         <div><img src="images/Landspace/b.jpg"></div>
@@ -78,7 +86,8 @@
                         <div><img src="images/Landspace/f.jpg"></div>
                 </div>
                 <div id="gr2" class="greetings">
-                    <span class="head">最后,我想对你说:</span><br>
+                    <span class="head">这只是一个简单无比的网页</span><br>
+                    <span class="head">但我们想表达的祝福,是最美好的...</span><br>
                     <span class="paragraph">想摘玫瑰，就要先折刺枝；</span><br>
                     <span class="paragraph">想走坦途，就要斩除荆棘；</span><br>
                     <span class="paragraph">想看到天明，就要勇闯夜寂；</span><br>
@@ -110,6 +119,10 @@
                 elearg.typewriterWithFadeIn(function(){
                     clockShow();
                 });
+            });
+
+            $("#gr3").registerOnEnterScreenEvent(function(elearg){
+                elearg.typewriterWithFadeIn();
             });
 
             waterflowEffectInit();

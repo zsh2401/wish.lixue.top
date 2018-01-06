@@ -4,7 +4,7 @@ function regionEffectInit(){
         var region = $(regions[i]);
         region.registerOnEnterScreenEvent(function(ele){
             ele.region_FadeIn(1000);
-        },300);
+        },-500);
     }
 }
 jQuery.fn.region_FadeIn =function(ms=1000){

@@ -17,14 +17,15 @@ jQuery.fn.typewriter = function(finishedcallback=null) {
 			} else {
 				progress++;
 			}
-			$ele.html(str.substring(0, progress) + (progress & 1 ? '' : ''));
+			$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
 			if (progress >= str.length) {
 				clearInterval(timer);
 				if(finishedcallback != null){
 					finishedcallback();
-				}
+                }
+                $ele.html(str.substring(0, progress - 1));
 			}
-		}, 150);
+		}, 100);
 	});
 	return this;
 };
