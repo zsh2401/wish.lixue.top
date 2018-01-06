@@ -24,7 +24,7 @@ jQuery.fn.typewriter = function(finishedcallback=null) {
 					finishedcallback();
 				}
 			}
-		}, 75);
+		}, 150);
 	});
 	return this;
 };

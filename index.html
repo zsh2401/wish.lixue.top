@@ -103,9 +103,9 @@
             bgm.play();
 
             $("#gr1").registerOnEnterScreenEvent(function(elearg){
-                
                 elearg.typewriterWithFadeIn();
-            });
+            },-200);
+
             $("#gr2").registerOnEnterScreenEvent(function(elearg){
                 elearg.typewriterWithFadeIn(function(){
                     clockShow();
