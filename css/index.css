@@ -11,7 +11,7 @@ body{
 }
 .region{
     clear: both;
-    visibility: hidden;
+    /* visibility: hidden; */
     position: relative;
     margin-left: auto;
     margin-right: auto;

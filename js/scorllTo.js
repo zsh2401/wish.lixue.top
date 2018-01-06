@@ -7,17 +7,22 @@ function registerScrollTo(eId,handler,offsetValue=300){
     data.offsetValue = offsetValue;
     _stRecords[_stRecords.length] = data;
 }
+function registerOnEnterScreenEvent(jqObj,handler,offsetValue=300){
+    var data = new Object();
+    data.ele = $(jqObj);
+    data.top = __stiGetEleTop(data.ele);
+    data.handler = handler;
+    data.offsetValue = offsetValue;
+    _stRecords[_stRecords.length] = data;
+}
 jQuery.fn.registerOnEnterScreenEvent = function(handler,checkOffsetValue=300) {
     var data = new Object();
-    // alert("x");
     data.ele = $(this);
     data.top = __stiGetEleTop(data.ele);
     data.handler = handler;
     data.offsetValue = checkOffsetValue;
     _stRecords[_stRecords.length] = data;
 };
-
-
 /* public functions */
 
 
@@ -34,10 +39,11 @@ function __stiGetEleTop(ele){
     return result;
 }
 function __stiCurrentScorllTop__(){
-    return document.documentElement.scrollTop;
+    var result = document.documentElement.scrollTop;
+    return result == 0 ? document.body.scrollTop:result;
 }
 function __stiGetScorllBottom(){
-    return ($(window).height() + document.documentElement.scrollTop);
+    return ($(window).height() + __stiCurrentScorllTop__());
 }
 function getClientHeight(){   
     var clientHeight=0;   
@@ -59,7 +65,8 @@ function __stiCheck__(){
         if(data.top == 0){
             continue;
         }
-        if(crt >= data.top - data.offsetValue){
+        
+        if(crt >= (data.top - data.offsetValue)){
             _stRecords.__stiremove__(i);
             data.handler(data.ele);
         }

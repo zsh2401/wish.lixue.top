@@ -6,7 +6,7 @@ function waterflowEffectInit(){
         $waterflow.chirdenForeach(function(index,$ele){
             $ele.registerOnEnterScreenEvent(function(elearg){
                 elearg.s_FadeIn(3000);
-            },-200)
+            })
         });
     }
 }

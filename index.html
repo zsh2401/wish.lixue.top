@@ -100,13 +100,10 @@
         <script>
             var bgm = document.getElementById('bgm');
             bgm.volume=0.10;
-            // bgm.play();
+            bgm.play();
 
-            waterflowEffectInit();
-            regionEffectInit();
-            clockStart();
-            
             $("#gr1").registerOnEnterScreenEvent(function(elearg){
+                
                 elearg.typewriterWithFadeIn();
             });
             $("#gr2").registerOnEnterScreenEvent(function(elearg){
@@ -115,6 +112,10 @@
                 });
             });
 
+            waterflowEffectInit();
+            regionEffectInit();
+            clockStart();
+            
             $("#container").fadeIn(1000);
         </script>
     </body>
